@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>평가 · DIRECT:ON 2026 기업 과제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero compact">
+  <div class="wrap">
+    <div class="eyebrow">DIRECT:ON 2026 · Company Challenge</div>
+    <h1><a href="index.html">DIRECT:ON 2026 기업 과제</a><small>실시간 음성 AI 상담원 (Real&#8209;time Voice AI Agent)</small></h1>
+    <dl class="facts">
+      <div><dt>행사명</dt><dd>DIRECT:ON 2026</dd></div>
+      <div><dt>주최 / 주관</dt><dd>GDGoC KU</dd></div>
+      <div><dt>협력 기업</dt><dd>GenerativeLab</dd></div>
+      <div><dt>과제 분야</dt><dd>Real-time Voice AI Agent</dd></div>
+      <div><dt>행사 일자</dt><dd>2026.11.21</dd></div>
+    </dl>
+  </div>
+</header>
+<nav class="tabs" aria-label="문서 페이지"><div class="tabs-in"><a href="index.html">개요</a><a href="scope.html">구현 범위</a><a href="open.html">공개 범위·사전 학습</a><a href="eval.html" aria-current="page">평가</a><a href="submit.html">제출·일정</a></div></nav>
+
+<div class="wrap page"><main>
+<section id="evaluation">
+      <h2><span class="no">05</span>평가 체계 <span class="tag pre">사전 공개</span></h2>
+      <p class="lead">DIRECT:ON 최종 시상은 아래 100점 체계로 결정됩니다.</p>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>평가 항목</th><th class="num">배점</th></tr></thead>
+          <tbody>
+            <tr><td>사용자 경험</td><td class="num">50점</td></tr>
+            <tr><td>응답 품질 및 기능 구현</td><td class="num">20점</td></tr>
+            <tr><td>발표 및 질의응답</td><td class="num">20점</td></tr>
+            <tr><td>최종 기획서</td><td class="num">10점</td></tr>
+          </tbody>
+          <tfoot><tr><td>합계</td><td class="num">100점</td></tr></tfoot>
+        </table>
+      </div>
+      <div class="bar" aria-hidden="true">
+        <div class="b1" style="flex:50">사용자 경험 50</div>
+        <div class="b2" style="flex:20">품질·기능 20</div>
+        <div class="b3" style="flex:20">발표·QA 20</div>
+        <div class="b4" style="flex:10">기획서 10</div>
+      </div>
+
+      <h3>① 사용자 경험 — 50점</h3>
+      <p>실제 고객이 AI 상담원을 사용한다고 가정했을 때의 경험을 심사위원이 정성적으로 평가합니다. 단순히 빠른 응답보다 <b>실제 고객이 사용했을 때 좋은 상담 경험을 제공하는지</b>가 중요합니다. 자세한 기준은 <a href="eval.html#ux">사용자 경험 평가</a>를 확인하세요.</p>
+
+      <h3>② 응답 품질 및 기능 구현 — 20점</h3>
+      <p>GenerativeLab의 측정기·채점기로 얻은 <b>시스템 정량 평가 결과</b>를 반영합니다. 시스템 내부 점수는 아래 비율로 계산되며, 이 방식은 그대로 유지됩니다.</p>
+      <div class="eq" aria-label="시스템 점수 산식">
+        <span class="pill">응대 50%</span><span class="op">+</span><span class="pill">함수 20%</span><span class="op">+</span><span class="pill">속도 30%</span>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>시스템 점수</th><th>비중</th><th>의미</th></tr></thead>
+          <tbody>
+            <tr><td>응대 점수</td><td class="num">50%</td><td>응대 매뉴얼을 정확히 따랐는가, 사실관계가 맞는가</td></tr>
+            <tr><td>함수 점수</td><td class="num">20%</td><td>필요한 함수를 올바르게 호출하고 결과를 반영했는가</td></tr>
+            <tr><td>속도 점수</td><td class="num">30%</td><td>응답이 얼마나 빠른가</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>이 시스템 점수 자체가 DIRECT:ON 최종 100점이 되는 것은 아닙니다. 위 결과를 DIRECT:ON 최종 점수의 <b>20점 영역에 환산해 반영</b>합니다.</p>
+
+      <h3>③ 발표 및 질의응답 — 20점</h3>
+      <ul>
+        <li>시스템 구조를 왜 이렇게 설계했는가</li>
+        <li>어떤 모델과 기술을 선택했고 그 이유는 무엇인가</li>
+        <li>어디까지 AI가 처리하도록 했는가</li>
+        <li>어떤 경우 사람 상담원에게 연결하도록 설계했는가</li>
+        <li>속도와 응대 품질 사이의 trade-off를 어떻게 판단했는가</li>
+        <li>실제 개발 과정에서 어떤 문제가 있었고 어떻게 개선했는가</li>
+        <li>심사위원 질문에 기술적 판단 근거를 설명할 수 있는가</li>
+      </ul>
+
+      <h3>④ 최종 기획서 — 10점</h3>
+      <p>문제 정의, 핵심 사용자, 주요 기능, 사용자 흐름, 기술 스택, 시스템 아키텍처, 데이터 흐름, AI 처리 범위, Human Handoff 기준, 주요 기술적 의사결정, 중간 피드백 반영 내용, 한계 및 향후 개선 방향을 평가합니다.</p>
+
+      <h3>System Evaluation과 User Experience Evaluation은 다릅니다</h3>
+      <div class="vs">
+        <div class="card">
+          <h3><span>SYSTEM EVALUATION · 20점에 반영</span>기술적으로 정확하게 작동하는가</h3>
+          <p>측정기·채점기가 응대, 함수, 속도를 정량적으로 채점합니다. 매뉴얼을 정확히 따랐는지, 사실관계가 맞는지를 봅니다.</p>
+        </div>
+        <div class="card">
+          <h3><span>USER EXPERIENCE EVALUATION · 50점</span>실제 고객이 쓰기에 좋은 상담인가</h3>
+          <p>실제 고객이 사용한다고 가정했을 때의 상담 경험을 심사위원이 정성적으로 평가합니다. 정량 점수가 같아도 고객 경험은 다를 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+<section id="ux">
+      <h2><span class="no">06</span>사용자 경험 평가 기준 <span class="tag pre">사전 공개</span></h2>
+      <p class="lead">심사위원은 다음 요소를 중심으로 봅니다.</p>
+      <ul class="checklist">
+        <li>불필요한 말을 반복하지 않는가</li>
+        <li>고객의 니즈를 정확하게 파악하는가</li>
+        <li>응답 속도가 실제 대화에서 자연스러운가</li>
+        <li>고객이 말하는 중간에 개입하거나 추가 질문을 했을 때 대응할 수 있는가</li>
+        <li>응답이 간결하고 명료한가</li>
+        <li>고객이 원하는 업무가 자연스럽게 완료되는가</li>
+      </ul>
+      <h3>감점으로 이어질 수 있는 사례</h3>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>사례</th><th>왜 문제인가</th></tr></thead>
+          <tbody>
+            <tr><td>필요 이상으로 긴 답변</td><td>음성 대화에서는 고객이 긴 답변을 끝까지 듣기 어렵습니다.</td></tr>
+            <tr><td>모든 답변에 동일한 채움말 반복</td><td>시스템 점수만 높이는 설계로, 고객은 같은 말을 계속 듣습니다.</td></tr>
+            <tr><td>이미 전달된 정보를 다시 묻는 경우</td><td>대화 맥락을 기억하지 못하는 상담원으로 느껴집니다.</td></tr>
+            <tr><td>고객의 핵심 니즈를 놓치는 경우</td><td>정확한 답이어도 고객이 원한 답이 아니면 업무가 끝나지 않습니다.</td></tr>
+            <tr><td>고객의 중간 개입을 무시하는 경우</td><td>실제 대화에서는 고객이 말을 끊고 정정하거나 질문을 덧붙입니다.</td></tr>
+            <tr><td>지나치게 빠르지만 부자연스러운 응답</td><td>고객이 말을 마치기 전에 답하거나, 사람 같지 않은 리듬이 됩니다.</td></tr>
+            <tr><td>정확하지만 응답 시간이 지나치게 긴 경우</td><td>침묵이 길어지면 고객이 통화가 끊겼다고 오해할 수 있습니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p><b>속도 × 정확성 × 자연스러운 고객 경험.</b> 셋 중 하나만 극대화하면 나머지가 무너질 수 있습니다. 어디에서 균형을 잡을지가 팀의 설계 역량이며, 발표에서 그 근거를 설명하게 됩니다.</p>
+      </div>
+    </section>
+<div class="pager"><a href="open.html" class="prev">← 공개 범위·사전 학습</a><a href="submit.html" class="next">제출·일정 →</a></div>
+</main></div>
+<footer>
+  <div class="wrap">
+    <b>DIRECT:ON 2026</b> · 주최/주관 GDGoC KU · 협력 기업 GenerativeLab · 2026.11.21<br>
+    본 문서는 11월 18일 OT 배부용 사전 공개본입니다. 11/21 현장 공개 항목은 행사 당일 Opening에서 제공됩니다.
+  </div>
+</footer>
+</body>
+</html>

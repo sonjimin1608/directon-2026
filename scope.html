@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>구현 범위 · DIRECT:ON 2026 기업 과제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero compact">
+  <div class="wrap">
+    <div class="eyebrow">DIRECT:ON 2026 · Company Challenge</div>
+    <h1><a href="index.html">DIRECT:ON 2026 기업 과제</a><small>실시간 음성 AI 상담원 (Real&#8209;time Voice AI Agent)</small></h1>
+    <dl class="facts">
+      <div><dt>행사명</dt><dd>DIRECT:ON 2026</dd></div>
+      <div><dt>주최 / 주관</dt><dd>GDGoC KU</dd></div>
+      <div><dt>협력 기업</dt><dd>GenerativeLab</dd></div>
+      <div><dt>과제 분야</dt><dd>Real-time Voice AI Agent</dd></div>
+      <div><dt>행사 일자</dt><dd>2026.11.21</dd></div>
+    </dl>
+  </div>
+</header>
+<nav class="tabs" aria-label="문서 페이지"><div class="tabs-in"><a href="index.html">개요</a><a href="scope.html" aria-current="page">구현 범위</a><a href="open.html">공개 범위·사전 학습</a><a href="eval.html">평가</a><a href="submit.html">제출·일정</a></div></nav>
+
+<div class="wrap page"><main>
+<section id="scope">
+      <h2><span class="no">02</span>구현 범위 <span class="tag pre">사전 공개</span></h2>
+      <p class="lead">참가자는 아래 파이프라인 전체를 서버로 구현합니다.</p>
+      <div class="diagram" role="img" aria-label="고객 음성이 WebSocket으로 서버에 들어와 STT, LLM, TTS를 거쳐 음성 응답으로 돌아가고, LLM은 Function Calling으로 모의 함수 서버를 호출하는 구조도">
+        <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+          <rect x="10" y="80" width="110" height="60" rx="6" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <text x="65" y="108" text-anchor="middle" font-size="15" font-weight="700">고객 음성</text>
+          <text x="65" y="127" text-anchor="middle" font-size="12" fill="var(--muted)" style="fill:var(--muted)">입력</text>
+          <rect x="150" y="30" width="700" height="200" rx="10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
+          <text x="166" y="54" font-size="13" font-weight="700" style="fill:var(--accent)">참가자가 구현하는 서버 (WebSocket)</text>
+          <rect x="175" y="95" width="100" height="56" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="225" y="129" text-anchor="middle" font-size="16" font-weight="700">STT</text>
+          <rect x="335" y="95" width="130" height="56" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="400" y="129" text-anchor="middle" font-size="16" font-weight="700">LLM</text>
+          <rect x="525" y="95" width="100" height="56" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="575" y="129" text-anchor="middle" font-size="16" font-weight="700">TTS</text>
+          <rect x="325" y="172" width="150" height="46" rx="6" fill="#f2f2f2" stroke="#000" stroke-width="2"/>
+          <text x="400" y="200" text-anchor="middle" font-size="14" font-weight="700" style="fill:#000">모의 함수 서버 (제공)</text>
+          <rect x="730" y="80" width="110" height="60" rx="6" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <text x="785" y="108" text-anchor="middle" font-size="15" font-weight="700">음성 응답</text>
+          <text x="785" y="127" text-anchor="middle" font-size="12" style="fill:var(--muted)">출력</text>
+          <g stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#ar)">
+            <path d="M120 110H172"/><path d="M275 123H332"/><path d="M465 123H522"/><path d="M625 123H727"/>
+            <path d="M385 151V169"/><path d="M415 172V154"/>
+          </g>
+          <text x="448" y="168" font-size="13" style="fill:var(--muted)">Function Calling</text>
+        </svg>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>구성 요소</th><th>참가자가 구현할 일</th></tr></thead>
+          <tbody>
+            <tr><td><b>WebSocket</b></td><td>음성 입력을 받아 음성 응답을 돌려주는 실시간 서버. 입력 → 응답이 끊김 없이 이어져야 합니다.</td></tr>
+            <tr><td><b>STT</b></td><td>고객 음성을 텍스트로 변환합니다.</td></tr>
+            <tr><td><b>LLM</b></td><td>응대 매뉴얼에 맞춰 대화를 이해하고 응답을 만듭니다.</td></tr>
+            <tr><td><b>Function Calling</b></td><td>업무 처리가 필요할 때 제공되는 모의 함수 서버의 함수를 호출하고, 그 결과를 응답에 반영합니다.</td></tr>
+            <tr><td><b>TTS</b></td><td>응답 텍스트를 음성으로 변환해 고객에게 돌려줍니다.</td></tr>
+            <tr><td><b>설계 판단</b></td><td>AI 처리 범위, Human Handoff 기준, 속도와 품질의 trade-off를 팀이 정하고 근거를 남깁니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p>모의 함수 서버, 측정기·채점기, 예시 서버, 평가용 데이터 및 세부 실행 파일은 <b><span class="tag live">11/21 현장 공개</span></b>입니다. 사전 단계에서는 위 구조를 이해하고 각 부품을 다뤄 보는 데 집중하세요.</p>
+      </div>
+    </section>
+<section id="rules">
+      <h2><span class="no">03</span>준수사항 <span class="tag pre">사전 공개</span></h2>
+      <ul class="checklist">
+        <li><b>제공 자료의 안내를 따릅니다.</b> 모의 함수 서버, 측정기·채점기, 예시 서버의 사용 방법은 11/21 현장에서 안내합니다.</li>
+        <li><b>시스템 평가는 제공 도구의 수치로 제출합니다.</b> 시스템 평가 결과는 GenerativeLab이 제공하는 측정기·채점기로 얻은 수치를 제출합니다.</li>
+        <li><b>시스템 점수만을 위한 설계를 지양합니다.</b> 예를 들어 모든 응답을 &ldquo;잠시만 기다려주세요&rdquo; 같은 동일한 채움말로 시작해 속도 점수만 높이는 방식은 실제 고객 경험 측면에서 좋은 설계로 보지 않을 수 있습니다.</li>
+        <li><b>Human Handoff 기준을 직접 정의합니다.</b> AI가 처리하지 않을 문의와 사람 상담원에게 연결하는 조건을 기획서와 발표에서 설명할 수 있어야 합니다.</li>
+        <li><b>직접 만든 시스템을 설명할 수 있어야 합니다.</b> 모델·기술 선택 이유와 개발 중 겪은 문제를 질의응답에서 기술적 근거로 답할 수 있어야 합니다.</li>
+        <li><b>정해진 시간 안에 제출합니다.</b> 최종 기획서는 16:00–18:30 Build &amp; Finalize 구간에 제출하며, 발표는 팀당 7분 + 질의응답 3분입니다.</li>
+      </ul>
+    </section>
+<div class="pager"><a href="index.html" class="prev">← 개요</a><a href="open.html" class="next">공개 범위·사전 학습 →</a></div>
+</main></div>
+<footer>
+  <div class="wrap">
+    <b>DIRECT:ON 2026</b> · 주최/주관 GDGoC KU · 협력 기업 GenerativeLab · 2026.11.21<br>
+    본 문서는 11월 18일 OT 배부용 사전 공개본입니다. 11/21 현장 공개 항목은 행사 당일 Opening에서 제공됩니다.
+  </div>
+</footer>
+</body>
+</html>
