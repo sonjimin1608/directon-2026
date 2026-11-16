@@ -2,24 +2,46 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>제출·일정 · DIRECT:ON 2026 기업 과제</title>
 <meta name="description" content="DIRECT:ON 2026 기업 과제: 실시간 음성 AI 상담원 (GenerativeLab)">
+<meta name="theme-color" content="#080A09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero compact">
-  <div class="wrap">
-    <h1><a href="index.html">DIRECT:ON 2026 기업 과제</a><small>실시간 음성 AI 상담원</small></h1>
-    <dl class="facts">
-      <div><dt>주최 / 주관</dt><dd>GDGoC KU</dd></div>
-      <div><dt>협력 기업</dt><dd>GenerativeLab</dd></div>
-      <div><dt>과제 분야</dt><dd>Real&#8209;time Voice AI Agent</dd></div>
-      <div><dt>행사 일자</dt><dd>2026.11.21</dd></div>
-    </dl>
+<header class="hero">
+  <div class="ceiling-wrap" aria-hidden="true">
+    <svg class="ceiling" preserveAspectRatio="none">
+      <defs>
+        <filter id="speckle" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.32" numOctaves="2" seed="11" result="n"/>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 4.1"/>
+          <feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 .7 .95"/></feComponentTransfer>
+        </filter>
+        <filter id="pores" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3" result="n"/>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  6 0 0 0 -3.6"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 120 60" aria-hidden="true" fill="none" stroke-width="13" stroke-linecap="round">
+        <path d="M43 10 10 30" stroke="#FF5B4D"/><path d="M10 30 43 50" stroke="#5B95FF"/>
+        <path d="M77 50 110 30" stroke="#FFC527"/><path d="M110 30 77 10" stroke="#3DDC84"/>
+      </svg>
+      <div><b>GDG on Campus</b><span>Korea University</span></div>
+    </a>
+    <span class="nav-date">DIRECT:ON 2026 · 11.21</span>
+  </div>
+  <div class="wrap sub-main">
+    <p class="tagline">DIRECT:ON 2026 기업 과제</p>
+    <h1>제출·일정</h1>
+    <p class="sub-desc">실시간 음성 AI 상담원 · 협력 기업 GenerativeLab</p>
   </div>
 </header>
 <nav class="tabs" aria-label="문서 페이지"><div class="wrap tabs-in"><a href="index.html">개요</a><a href="scope.html">구현 범위·준수사항</a><a href="open.html">공개 범위·사전 학습</a><a href="eval.html">평가</a><a href="submit.html" aria-current="page">제출·일정</a></div></nav>
@@ -27,6 +49,7 @@
 <div class="wrap">
 <main>
 <section id="submit">
+  <p class="kicker" style="--c:var(--yellow)" aria-hidden="true">Deliverables</p>
   <h2>최종 제출물</h2>
   <p class="lead">제출물은 다섯 가지입니다.</p>
   <div class="tablebox">
@@ -48,6 +71,7 @@
 </section>
 
 <section id="schedule">
+  <p class="kicker" style="--c:var(--blue)" aria-hidden="true">Timeline</p>
   <h2>행사 진행 및 제출 일정</h2>
   <p class="lead">2026.11.21. 현장 상황에 따라 약 10분 내외로 일정이 조정될 수 있습니다.</p>
   <ol class="timeline">
@@ -68,15 +92,49 @@
 <nav class="pager" aria-label="이전·다음 페이지"><a class="prev" href="eval.html">← 평가</a></nav>
 </main>
 </div>
-<footer>
-  <div class="wrap">
+<footer class="signbox">
+  <div class="glow"></div>
+  <div class="wrap foot-in">
+    <p class="tube-text">See you on 11.21</p>
     <p>DIRECT:ON 2026 · 주최 / 주관 GDGoC KU · 협력 기업 GenerativeLab · 2026.11.21</p>
     <p>11/18 OT 배부용 사전 공개본입니다. 11/21 현장 공개 자료는 행사 당일 Opening에서 제공합니다.</p>
   </div>
+  <div class="foot-bar">
+    <p>GDG on Campus Korea University</p>
+    <p>Google Developer Groups 프로그램에 속한 학생 커뮤니티이며, Google이 직접 운영하는 단체는 아닙니다.</p>
+  </div>
 </footer>
 <script>
-(function(){var a=document.querySelector('.tabs [aria-current]'),n=document.querySelector('.tabs-in');
-if(a&&n&&n.scrollWidth>n.clientWidth){n.scrollLeft=a.offsetLeft-(n.clientWidth-a.offsetWidth)/2;}})();
+(function(){
+  var a=document.querySelector('.tabs [aria-current]'),n=document.querySelector('.tabs-in');
+  if(a&&n&&n.scrollWidth>n.clientWidth){n.scrollLeft=a.offsetLeft-(n.clientWidth-a.offsetWidth)/2;}
+  var NS='http://www.w3.org/2000/svg',svg=document.querySelector('.ceiling');
+  function el(t,at,p){var e=document.createElementNS(NS,t);for(var k in at)e.setAttribute(k,at[k]);p.appendChild(e);return e;}
+  var layer=svg?el('g',{},svg):null;
+  function draw(){if(!svg)return;var w=svg.clientWidth,h=svg.clientHeight;svg.setAttribute('viewBox','0 0 '+w+' '+h);layer.textContent='';
+    el('rect',{width:w,height:h,filter:'url(#pores)',opacity:.05},layer);
+    el('rect',{width:w,height:h,filter:'url(#speckle)',fill:'#000'},layer);
+    var tile=Math.max(260,Math.min(w,Math.max(h,520))*0.42),tilt=0.07;
+    for(var y=-tile;y<h+tile*2;y+=tile){var y1=y-w*tilt;
+      el('line',{x1:0,y1:y+2,x2:w,y2:y1+2,stroke:'#000','stroke-width':3,opacity:.55},layer);
+      el('line',{x1:0,y1:y,x2:w,y2:y1,stroke:'#fff','stroke-width':1,opacity:.06},layer);}}
+  var stage=document.getElementById('stage'),size=document.getElementById('sceneSize'),scene=document.getElementById('scene');
+  function fit(){if(!stage)return;var s=Math.min(1,(stage.clientWidth-8)/600);scene.style.setProperty('--s',s);size.style.width=600*s+'px';size.style.height=380*s+'px';}
+  draw();fit();var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){draw();fit();},120);});
+  if(!stage)return;
+  var hit=document.getElementById('hit'),box=document.getElementById('box'),hero=document.querySelector('.hero');
+  hit.addEventListener('pointerenter',function(){stage.classList.add('is-hot');});
+  hit.addEventListener('pointerleave',function(){stage.classList.remove('is-hot');});
+  hit.addEventListener('pointerdown',function(){stage.classList.toggle('is-hot');});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var tx=0,ty=0,cx=0,cy=0,raf=0;
+  function tick(){cx+=(tx-cx)*0.08;cy+=(ty-cy)*0.08;box.style.setProperty('--tx',cx.toFixed(2)+'deg');box.style.setProperty('--ty',cy.toFixed(2)+'deg');
+    raf=Math.abs(tx-cx)+Math.abs(ty-cy)>0.02?requestAnimationFrame(tick):0;}
+  hero.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect();
+    var nx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2))),ny=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
+    ty=nx*7;tx=-ny*5;if(!raf)raf=requestAnimationFrame(tick);});
+  hero.addEventListener('pointerleave',function(){tx=0;ty=0;if(!raf)raf=requestAnimationFrame(tick);});
+})();
 </script>
 </body>
 </html>

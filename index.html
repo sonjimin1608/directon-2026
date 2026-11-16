@@ -2,24 +2,111 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>DIRECT:ON 2026 기업 과제</title>
 <meta name="description" content="DIRECT:ON 2026 기업 과제: 실시간 음성 AI 상담원 (GenerativeLab)">
+<meta name="theme-color" content="#080A09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <h1><a href="index.html">DIRECT:ON 2026 기업 과제</a><small>실시간 음성 AI 상담원</small></h1>
-    <dl class="facts">
-      <div><dt>주최 / 주관</dt><dd>GDGoC KU</dd></div>
-      <div><dt>협력 기업</dt><dd>GenerativeLab</dd></div>
-      <div><dt>과제 분야</dt><dd>Real&#8209;time Voice AI Agent</dd></div>
-      <div><dt>행사 일자</dt><dd>2026.11.21</dd></div>
-    </dl>
+<header class="hero full" id="top">
+  <div class="ceiling-wrap" aria-hidden="true">
+    <svg class="ceiling" preserveAspectRatio="none">
+      <defs>
+        <filter id="speckle" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.32" numOctaves="2" seed="11" result="n"/>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 4.1"/>
+          <feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 .7 .95"/></feComponentTransfer>
+        </filter>
+        <filter id="pores" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3" result="n"/>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  6 0 0 0 -3.6"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 120 60" aria-hidden="true" fill="none" stroke-width="13" stroke-linecap="round">
+        <path d="M43 10 10 30" stroke="#FF5B4D"/><path d="M10 30 43 50" stroke="#5B95FF"/>
+        <path d="M77 50 110 30" stroke="#FFC527"/><path d="M110 30 77 10" stroke="#3DDC84"/>
+      </svg>
+      <div><b>GDG on Campus</b><span>Korea University</span></div>
+    </a>
+    <span class="nav-date">DIRECT:ON 2026 · 11.21</span>
+  </div>
+  <div class="hero-main">
+    <div class="copy">
+      <p class="tagline">Turn the Direction ON.</p>
+      <h1>DIRECT:ON</h1>
+      <p class="lede">2026 기업 과제 · 실시간 음성 AI 상담원</p>
+      <p class="desc">기업이 제시한 실제 문제를 하루 안에 끝까지 완성하는 기업 협력형 해커톤, DIRECT:ON 2026의 GenerativeLab 과제입니다.</p>
+      <ol class="flow" aria-label="구현할 음성 처리 흐름">
+        <li><span>STT</span></li><li><span>LLM</span></li><li><span>Function Calling</span></li><li><span>TTS</span></li>
+      </ol>
+      <dl class="partner">
+        <dt>협력 기업</dt><dd class="name">GENERATIVELAB</dd>
+        <dt>주최 / 주관</dt><dd>GDGoC KU</dd>
+        <dt>과제 분야</dt><dd>Real&#8209;time Voice AI Agent</dd>
+        <dt>행사 일자</dt><dd>2026.11.21</dd>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-tube" href="scope.html">과제 살펴보기</a>
+        <a class="btn btn-quiet" href="eval.html">평가 기준 보기 →</a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="pool" aria-hidden="true"><div class="pool-lit"></div></div>
+      <div class="scene-size" id="sceneSize">
+        <div class="scene" id="scene">
+          <div class="box" id="box">
+            <div class="halo-wrap" aria-hidden="true"><div class="halo"></div></div>
+            <div class="f-top"></div><div class="f-left"></div>
+            <div class="f-bottom"></div><div class="f-right"></div>
+            <div class="bracket" aria-hidden="true"><div class="b-top"></div><div class="b-left"></div><div class="b-right"></div><div class="b-front"></div></div>
+            <svg class="f-front" viewBox="0 0 520 260" role="img" aria-label="문 밖으로 달려 나가는 사람과 GDG 마크가 그려진 비상구 표지">
+              <defs>
+                <linearGradient id="housing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C413E"/><stop offset=".08" stop-color="#262928"/><stop offset="1" stop-color="#141615"/></linearGradient>
+                <radialGradient id="panel" cx="44%" cy="40%" r="75%"><stop offset="0" stop-color="#3DEB8E"/><stop offset=".55" stop-color="#1DC469"/><stop offset="1" stop-color="#0D964B"/></radialGradient>
+                <filter id="inkGlow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <linearGradient id="bevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              </defs>
+              <rect x="0" y="0" width="520" height="260" rx="7" fill="url(#housing)"/>
+              <rect x="0" y="0" width="520" height="260" rx="7" fill="url(#bevel)"/>
+              <rect x=".75" y=".75" width="518.5" height="258.5" rx="6.5" fill="none" stroke="#4A4F4C" stroke-width="1.5"/>
+              <line x1="10" y1="226" x2="510" y2="226" stroke="#0A0B0B" stroke-width="2"/>
+              <line x1="10" y1="228" x2="510" y2="228" stroke="#3A3F3C" stroke-width="1"/>
+              <circle cx="490" cy="242" r="3" fill="#3BFF8F"/><circle cx="490" cy="242" r="7" fill="#3BFF8F" opacity=".18"/>
+              <g class="face">
+                <rect x="14" y="13" width="492" height="200" rx="3" fill="#0A0B0B"/>
+                <rect x="16" y="14" width="488" height="196" rx="3" fill="url(#panel)"/>
+                <g filter="url(#inkGlow)">
+                  <g transform="translate(64 30) scale(.93) translate(-96 -52)">
+                    <path d="M96 52 H238 V234 H62 V212 H96 Z" fill="#F7FFF9" stroke="#F7FFF9" stroke-width="4" stroke-linejoin="round"/>
+                    <g fill="none" stroke="#14B25C" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M180 108 L156 160" stroke-width="24"/>
+                      <path d="M182 112 L206 136 L232 122" stroke-width="13"/>
+                      <path d="M172 112 L144 118 L127 137" stroke-width="13"/>
+                      <path d="M160 160 L194 178 L188 214 L205 218" stroke-width="15"/>
+                      <path d="M152 164 L128 198 L80 213" stroke-width="15"/>
+                    </g>
+                    <circle cx="200" cy="80" r="14" fill="#14B25C"/>
+                  </g>
+                  <g transform="translate(360 112) scale(.95) translate(-396 -144)" fill="none" stroke="#F7FFF9" stroke-width="23" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M364 106 L304 144 L364 182"/><path d="M428 182 L488 144 L428 106"/>
+                  </g>
+                </g>
+                <rect x="16" y="14" width="488" height="62" rx="3" fill="#fff" opacity=".07"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="hit" id="hit" aria-hidden="true"></div>
+    </div>
   </div>
 </header>
 <nav class="tabs" aria-label="문서 페이지"><div class="wrap tabs-in"><a href="index.html" aria-current="page">개요</a><a href="scope.html">구현 범위·준수사항</a><a href="open.html">공개 범위·사전 학습</a><a href="eval.html">평가</a><a href="submit.html">제출·일정</a></div></nav>
@@ -30,6 +117,7 @@
 <div class="wrap">
 <main>
 <section id="overview">
+  <p class="kicker" style="--c:var(--blue)" aria-hidden="true">Overview</p>
   <h2>한눈에 보기</h2>
   <p class="lead">무엇을 만들고, 무엇을 제출하고, 무엇으로 평가받는지 정리했습니다.</p>
   <p class="task">고객의 음성 문의를 실시간으로 듣고, 기업의 응대 매뉴얼에 맞춰 정확하게 응답하며, 필요한 업무는 함수 호출로 처리하는 음성 AI 상담원 서버를 구현합니다.</p>
@@ -68,6 +156,7 @@
 </section>
 
 <section id="problem">
+  <p class="kicker" style="--c:var(--red)" aria-hidden="true">Problem</p>
   <h2>문제 상황과 목표</h2>
   <h3>문제 상황</h3>
   <p>고객은 전화를 걸듯 말로 문의합니다. 상담원은 고객의 말을 듣고, 응대 매뉴얼에 맞게 사실대로 답하고, 업무 처리가 필요하면 시스템 기능(함수)을 호출해 처리해야 합니다.</p>
@@ -83,15 +172,49 @@
 <nav class="pager" aria-label="이전·다음 페이지"><a class="next" href="scope.html">구현 범위·준수사항 →</a></nav>
 </main>
 </div>
-<footer>
-  <div class="wrap">
+<footer class="signbox">
+  <div class="glow"></div>
+  <div class="wrap foot-in">
+    <p class="tube-text">See you on 11.21</p>
     <p>DIRECT:ON 2026 · 주최 / 주관 GDGoC KU · 협력 기업 GenerativeLab · 2026.11.21</p>
     <p>11/18 OT 배부용 사전 공개본입니다. 11/21 현장 공개 자료는 행사 당일 Opening에서 제공합니다.</p>
   </div>
+  <div class="foot-bar">
+    <p>GDG on Campus Korea University</p>
+    <p>Google Developer Groups 프로그램에 속한 학생 커뮤니티이며, Google이 직접 운영하는 단체는 아닙니다.</p>
+  </div>
 </footer>
 <script>
-(function(){var a=document.querySelector('.tabs [aria-current]'),n=document.querySelector('.tabs-in');
-if(a&&n&&n.scrollWidth>n.clientWidth){n.scrollLeft=a.offsetLeft-(n.clientWidth-a.offsetWidth)/2;}})();
+(function(){
+  var a=document.querySelector('.tabs [aria-current]'),n=document.querySelector('.tabs-in');
+  if(a&&n&&n.scrollWidth>n.clientWidth){n.scrollLeft=a.offsetLeft-(n.clientWidth-a.offsetWidth)/2;}
+  var NS='http://www.w3.org/2000/svg',svg=document.querySelector('.ceiling');
+  function el(t,at,p){var e=document.createElementNS(NS,t);for(var k in at)e.setAttribute(k,at[k]);p.appendChild(e);return e;}
+  var layer=svg?el('g',{},svg):null;
+  function draw(){if(!svg)return;var w=svg.clientWidth,h=svg.clientHeight;svg.setAttribute('viewBox','0 0 '+w+' '+h);layer.textContent='';
+    el('rect',{width:w,height:h,filter:'url(#pores)',opacity:.05},layer);
+    el('rect',{width:w,height:h,filter:'url(#speckle)',fill:'#000'},layer);
+    var tile=Math.max(260,Math.min(w,Math.max(h,520))*0.42),tilt=0.07;
+    for(var y=-tile;y<h+tile*2;y+=tile){var y1=y-w*tilt;
+      el('line',{x1:0,y1:y+2,x2:w,y2:y1+2,stroke:'#000','stroke-width':3,opacity:.55},layer);
+      el('line',{x1:0,y1:y,x2:w,y2:y1,stroke:'#fff','stroke-width':1,opacity:.06},layer);}}
+  var stage=document.getElementById('stage'),size=document.getElementById('sceneSize'),scene=document.getElementById('scene');
+  function fit(){if(!stage)return;var s=Math.min(1,(stage.clientWidth-8)/600);scene.style.setProperty('--s',s);size.style.width=600*s+'px';size.style.height=380*s+'px';}
+  draw();fit();var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){draw();fit();},120);});
+  if(!stage)return;
+  var hit=document.getElementById('hit'),box=document.getElementById('box'),hero=document.querySelector('.hero');
+  hit.addEventListener('pointerenter',function(){stage.classList.add('is-hot');});
+  hit.addEventListener('pointerleave',function(){stage.classList.remove('is-hot');});
+  hit.addEventListener('pointerdown',function(){stage.classList.toggle('is-hot');});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var tx=0,ty=0,cx=0,cy=0,raf=0;
+  function tick(){cx+=(tx-cx)*0.08;cy+=(ty-cy)*0.08;box.style.setProperty('--tx',cx.toFixed(2)+'deg');box.style.setProperty('--ty',cy.toFixed(2)+'deg');
+    raf=Math.abs(tx-cx)+Math.abs(ty-cy)>0.02?requestAnimationFrame(tick):0;}
+  hero.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect();
+    var nx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2))),ny=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
+    ty=nx*7;tx=-ny*5;if(!raf)raf=requestAnimationFrame(tick);});
+  hero.addEventListener('pointerleave',function(){tx=0;ty=0;if(!raf)raf=requestAnimationFrame(tick);});
+})();
 </script>
 </body>
 </html>
